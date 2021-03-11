@@ -1,0 +1,19 @@
+---
+title: "bridges_HW"
+author: "David Young"
+date: "2/2/2021"
+output: github_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+library(data.table)
+library(readr)
+```
+
+```{r}
+bridges = fread('WI10.txt')
+new.bridges = data.frame(bridges$YEAR_BUILT_027, bridges$OPERATING_RATING_064, bridges$COUNTY_CODE_003, bridges$LOCATION_009,bridges$RAILINGS_036A)
+#Grabbing information for the year built, operation rating, the county code of the bridge, location of the bridge, and whether or not it has railings.
+head(new.bridges)
+```
